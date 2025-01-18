@@ -58,20 +58,11 @@
             <span class="d-none d-md-block dropdown-toggle ps-2">{{ session('karyawan_nama') }}</span>
         </a><!-- End Profile Image Icon -->
 <!-- End Profile Image Icon -->
-
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6> {{ session('karyawan_nama') }}</h6>
               <span> {{ session('karyawan_role') }}</span>
             </li>
-            <li><hr class="dropdown-divider"></li>
-            <li>
-              <a class="dropdown-item d-flex align-items-center"href="{{ route('profil') }}">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li><hr class="dropdown-divider"></li>
           
             <li><hr class="dropdown-divider"></li>
             <li>
@@ -82,12 +73,12 @@
             <span>Sign Out</span>
         </button>
     </form>
-</li>
+</li> 
 
           </ul><!-- End Profile Dropdown Items -->
         </li><!-- End Profile Nav -->
       </ul>
-    </nav><!-- End Icons Navigation -->
+    </nav><!-- End Icons Navigation --> 
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
@@ -193,16 +184,17 @@
                 </ul>
             </li><!-- End Icons Nav -->
         @endif
-
-
+        
+        @if(session('karyawan_role') == 'Admin')
         <li class="nav-heading">Pages</li>
-
+        
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('profil') }}">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
             </a>
         </li><!-- End Profile Page Nav -->
+        @endif
     </ul>
 </aside>
 
