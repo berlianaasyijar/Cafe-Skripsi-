@@ -21,7 +21,11 @@ class KaryawanController extends Controller
 
         $fotoPath = null;
         if ($request->hasFile('foto')) {
-            $fotoPath = $request->file('foto')->store('karyawan_fotos', 'public');
+            $imageName = time().'.'.$request->image->extension();
+
+            $request->image->move(public_path('images'), $imageName);
+
+            $fotoPath = 'images/' . $imageName;
         }
 
         Karyawan::create([
