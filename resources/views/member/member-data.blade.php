@@ -25,7 +25,6 @@
                                 <th>Username</th>
                                 <th>No Hp</th>
                                 <th>Point</th>
-                                <th>Level</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -36,7 +35,6 @@
                                     <td>{{ $member->username }}</td>
                                     <td>{{ $member->no_hp }}</td>
                                     <td>{{ $member->point }}</td>
-                                    <td>{{ $member->level }}</td>
                                     <td>
                                         <form action="{{ route('member.destroy', $member->id) }}" method="POST">
                                             @csrf
